@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import * as SplashScreen from 'expo-splash-screen';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Appearance, useColorScheme, useColorScheme} from 'react-native';
 import { SafeAreaProvider, useSafeAreaInsets} from 'react-native-safe-area-context';
 import { UseFonts } from 'expo-font';
 import { useCallback } from 'react';
@@ -15,6 +15,16 @@ function Homescreen(){
       <Text style={{ fontSize: 40}}>Acaricia a tu perrito porfi.</Text>
     </View>
   );
+}
+
+function MyComponent(){
+  let ColorScheme = useColorScheme();
+
+  if (colorScheme === "dark"){
+    //render some dark thing
+  } else {
+    //render some light thing
+  }
 }
 export default function App() {
   const [fontsLoaded, fontError] = UseFonts({
@@ -33,6 +43,8 @@ export default function App() {
     </SafeAreaProvider>
     );
 }
+
+
 
 const styles = StyleSheet.create({
   container: {
